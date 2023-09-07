@@ -43,3 +43,9 @@ $ controller + (name)
 
 # do not make test code 
 $ --no-spec
+```
+
+## Use Prettier in webstorm
+```bash
+# Languages & Frameworks -> Javascript -> Prettier
+$ On 'Reformat Code' action [check]
