@@ -29,3 +29,17 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 ```
+
+## Use nest command
+```bash
+# use nestcli
+$ nest
+
+# generate
+$ g
+
+# controller schematic + controller name
+$ controller + (name)
+
+# do not make test code 
+$ --no-spec

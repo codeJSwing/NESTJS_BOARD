@@ -6,15 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.BoardsModule = void 0;
 const common_1 = require("@nestjs/common");
-const boards_module_1 = require("./boards/boards.module");
-let AppModule = class AppModule {
+let BoardsModule = class BoardsModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
-    (0, common_1.Module)({
-        imports: [boards_module_1.BoardsModule],
-    })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+exports.BoardsModule = BoardsModule;
+exports.BoardsModule = BoardsModule = __decorate([
+    (0, common_1.Module)({})
+], BoardsModule);
+//# sourceMappingURL=boards.module.js.map
