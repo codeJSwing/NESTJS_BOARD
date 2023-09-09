@@ -28,6 +28,9 @@ let BoardsService = class BoardsService {
         this.boards.push(board);
         return board;
     }
+    getBoardById(id) {
+        return this.boards.find((board) => board.id === id);
+    }
 };
 exports.BoardsService = BoardsService;
 exports.BoardsService = BoardsService = __decorate([

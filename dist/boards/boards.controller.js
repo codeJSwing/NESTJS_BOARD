@@ -26,6 +26,9 @@ let BoardsController = class BoardsController {
     createBoard(createBoardDto) {
         return this.boardsService.createBoard(createBoardDto);
     }
+    getBoardById(id) {
+        return this.boardsService.getBoardById(id);
+    }
 };
 exports.BoardsController = BoardsController;
 __decorate([
@@ -41,6 +44,13 @@ __decorate([
     __metadata("design:paramtypes", [create_board_dto_1.CreateBoardDto]),
     __metadata("design:returntype", Object)
 ], BoardsController.prototype, "createBoard", null);
+__decorate([
+    (0, common_1.Get)('/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Object)
+], BoardsController.prototype, "getBoardById", null);
 exports.BoardsController = BoardsController = __decorate([
     (0, common_1.Controller)('boards'),
     __metadata("design:paramtypes", [boards_service_1.BoardsService])

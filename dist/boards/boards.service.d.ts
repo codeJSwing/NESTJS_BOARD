@@ -4,4 +4,5 @@ export declare class BoardsService {
     private boards;
     getAllBoards(): Board[];
     createBoard(createBoardDto: CreateBoardDto): Board;
+    getBoardById(id: string): Board;
 }
