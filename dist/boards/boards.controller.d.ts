@@ -7,4 +7,5 @@ export declare class BoardsController {
     getAllBoard(): Board[];
     createBoard(createBoardDto: CreateBoardDto): Board;
     getBoardById(id: string): Board;
+    deleteBoard(id: string): void;
 }

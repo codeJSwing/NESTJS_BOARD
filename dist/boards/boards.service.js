@@ -31,6 +31,9 @@ let BoardsService = class BoardsService {
     getBoardById(id) {
         return this.boards.find((board) => board.id === id);
     }
+    deleteBoard(id) {
+        this.boards = this.boards.filter((board) => board.id !== id);
+    }
 };
 exports.BoardsService = BoardsService;
 exports.BoardsService = BoardsService = __decorate([
