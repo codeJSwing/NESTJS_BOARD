@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BoardsController = void 0;
 const common_1 = require("@nestjs/common");
 const boards_service_1 = require("./boards.service");
+const create_board_dto_1 = require("./dto/create-board.dto");
 let BoardsController = class BoardsController {
     constructor(boardsService) {
         this.boardsService = boardsService;
@@ -22,8 +23,8 @@ let BoardsController = class BoardsController {
     getAllBoard() {
         return this.boardsService.getAllBoards();
     }
-    createBoard(title, description) {
-        return this.boardsService.createBoard(title, description);
+    createBoard(createBoardDto) {
+        return this.boardsService.createBoard(createBoardDto);
     }
 };
 exports.BoardsController = BoardsController;
@@ -35,10 +36,9 @@ __decorate([
 ], BoardsController.prototype, "getAllBoard", null);
 __decorate([
     (0, common_1.Post)('/'),
-    __param(0, (0, common_1.Body)('title')),
-    __param(1, (0, common_1.Body)('description')),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:paramtypes", [create_board_dto_1.CreateBoardDto]),
     __metadata("design:returntype", Object)
 ], BoardsController.prototype, "createBoard", null);
 exports.BoardsController = BoardsController = __decorate([
