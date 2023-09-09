@@ -34,6 +34,11 @@ let BoardsService = class BoardsService {
     deleteBoard(id) {
         this.boards = this.boards.filter((board) => board.id !== id);
     }
+    updateBoardStatus(id, status) {
+        const board = this.getBoardById(id);
+        board.status = status;
+        return board;
+    }
 };
 exports.BoardsService = BoardsService;
 exports.BoardsService = BoardsService = __decorate([

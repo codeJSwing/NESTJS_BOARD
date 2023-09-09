@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BoardsController = void 0;
 const common_1 = require("@nestjs/common");
 const boards_service_1 = require("./boards.service");
+const boards_model_1 = require("./boards.model");
 const create_board_dto_1 = require("./dto/create-board.dto");
 let BoardsController = class BoardsController {
     constructor(boardsService) {
@@ -31,6 +32,9 @@ let BoardsController = class BoardsController {
     }
     deleteBoard(id) {
         this.boardsService.deleteBoard(id);
+    }
+    updateBoardStatus(id, status) {
+        return this.boardsService.updateBoardStatus(id, status);
     }
 };
 exports.BoardsController = BoardsController;
@@ -61,6 +65,14 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], BoardsController.prototype, "deleteBoard", null);
+__decorate([
+    (0, common_1.Patch)(':id/status'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)('status')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", void 0)
+], BoardsController.prototype, "updateBoardStatus", null);
 exports.BoardsController = BoardsController = __decorate([
     (0, common_1.Controller)('boards'),
     __metadata("design:paramtypes", [boards_service_1.BoardsService])
