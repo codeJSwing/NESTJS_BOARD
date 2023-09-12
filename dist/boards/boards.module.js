@@ -16,7 +16,7 @@ exports.BoardsModule = BoardsModule;
 exports.BoardsModule = BoardsModule = __decorate([
     (0, common_1.Module)({
         controllers: [boards_controller_1.BoardsController],
-        providers: [boards_service_1.BoardsService]
+        providers: [boards_service_1.BoardsService],
     })
 ], BoardsModule);
 //# sourceMappingURL=boards.module.js.map

@@ -5,10 +5,7 @@ const common_1 = require("@nestjs/common");
 const boards_model_1 = require("../boards.model");
 class BoardStatusValidationPipe {
     constructor() {
-        this.StatusOptions = [
-            boards_model_1.BoardStatus.PRIVATE,
-            boards_model_1.BoardStatus.PUBLIC
-        ];
+        this.StatusOptions = [boards_model_1.BoardStatus.PRIVATE, boards_model_1.BoardStatus.PUBLIC];
     }
     transform(value, metadata) {
         value = value.toUpperCase();
