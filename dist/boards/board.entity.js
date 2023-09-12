@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Board = void 0;
 const typeorm_1 = require("typeorm");
-const boards_model_1 = require("./boards.model");
+const boards_status_enum_1 = require("./boards.status.enum");
 class Board extends typeorm_1.BaseEntity {
 }
 exports.Board = Board;
