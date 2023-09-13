@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Board = void 0;
 const typeorm_1 = require("typeorm");
 const boards_status_enum_1 = require("./boards.status.enum");
-class Board extends typeorm_1.BaseEntity {
-}
+let Board = class Board extends typeorm_1.BaseEntity {
+};
 exports.Board = Board;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
@@ -31,4 +31,7 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Board.prototype, "status", void 0);
+exports.Board = Board = __decorate([
+    (0, typeorm_1.Entity)()
+], Board);
 //# sourceMappingURL=board.entity.js.map

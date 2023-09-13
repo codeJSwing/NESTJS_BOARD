@@ -14,14 +14,25 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BoardsService = void 0;
 const common_1 = require("@nestjs/common");
+const boards_status_enum_1 = require("./boards.status.enum");
 const board_repository_1 = require("./board.repository");
 const typeorm_1 = require("@nestjs/typeorm");
 let BoardsService = class BoardsService {
     constructor(boardRepository) {
         this.boardRepository = boardRepository;
     }
+    async createBoard(createBoardDto) {
+        const { title, description } = createBoardDto;
+        const board = this.boardRepository.create({
+            title,
+            description,
+            status: boards_status_enum_1.BoardStatus.PUBLIC,
+        });
+        await this.boardRepository.save(board);
+        return board;
+    }
     async getBoardById(id) {
-        const found = await this.boardRepository.findOne({ where: { id } });
+        const found = await this.boardRepository.findOneBy({ id });
         if (!found) {
             throw new common_1.NotFoundException(`Can't find Board with id ${id}`);
         }

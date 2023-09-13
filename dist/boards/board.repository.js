@@ -13,6 +13,6 @@ let BoardRepository = class BoardRepository extends typeorm_1.Repository {
 };
 exports.BoardRepository = BoardRepository;
 exports.BoardRepository = BoardRepository = __decorate([
-    (0, typeorm_1.EntityRepository)(board_entity_1.Board)
+    (0, typeorm_1.Repository)(board_entity_1.Board)
 ], BoardRepository);
 //# sourceMappingURL=board.repository.js.map

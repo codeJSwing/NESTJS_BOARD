@@ -15,15 +15,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BoardsController = void 0;
 const common_1 = require("@nestjs/common");
 const boards_service_1 = require("./boards.service");
+const create_board_dto_1 = require("./dto/create-board.dto");
 let BoardsController = class BoardsController {
     constructor(boardsService) {
         this.boardsService = boardsService;
+    }
+    createBoard(createBoardDto) {
+        return this.boardsService.createBoard(createBoardDto);
     }
     getBoardById(id) {
         return this.boardsService.getBoardById(id);
     }
 };
 exports.BoardsController = BoardsController;
+__decorate([
+    (0, common_1.Post)(),
+    (0, common_1.UsePipes)(common_1.ValidationPipe),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_board_dto_1.CreateBoardDto]),
+    __metadata("design:returntype", Promise)
+], BoardsController.prototype, "createBoard", null);
 __decorate([
     (0, common_1.Get)('/:id'),
     __param(0, (0, common_1.Param)('id')),
