@@ -38,6 +38,13 @@ let BoardsService = class BoardsService {
         }
         return found;
     }
+    async deleteBoard(id) {
+        const result = await this.boardRepository.delete(id);
+        if (result.affected === 0) {
+            throw new common_1.NotFoundException(`Can't find Board with id ${id}`);
+        }
+        console.log('result', result);
+    }
 };
 exports.BoardsService = BoardsService;
 exports.BoardsService = BoardsService = __decorate([
