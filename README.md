@@ -49,3 +49,25 @@ $ --no-spec
 ```bash
 # Languages & Frameworks -> Javascript -> Prettier
 $ On 'Reformat Code' action [check]
+```
+
+## Prettier Setting
+```bash
+# 탭 간격
+$ "tabWidth": 4
+
+# 작은 따옴표 사용
+$ "singleQuote": true
+
+# 마지막 요소 뒤에 쉼표 사용
+# (요소를 추가하거나 삭제할 때 코드 변경이 더 쉬워진다.)
+$ "trailingComma": "all"
+
+# 객체 리터럴에서 중괄호 사이에 공백 삽입
+$ "bracketSpacing": true
+
+# 객체 리터럴의 대괄호 {}를 같은 줄에 표시할지 여부를 지정
+$ "bracketSameLine": true
+
+# 문장 끝에 세미콜론을 삽입
+$ "semi": true
