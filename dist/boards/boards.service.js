@@ -21,6 +21,9 @@ let BoardsService = class BoardsService {
     constructor(boardRepository) {
         this.boardRepository = boardRepository;
     }
+    async getAllBoard() {
+        return this.boardRepository.find();
+    }
     async createBoard(createBoardDto) {
         const { title, description } = createBoardDto;
         const board = this.boardRepository.create({

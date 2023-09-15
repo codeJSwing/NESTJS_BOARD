@@ -22,6 +22,9 @@ let BoardsController = class BoardsController {
     constructor(boardsService) {
         this.boardsService = boardsService;
     }
+    getAllBoard() {
+        return this.boardsService.getAllBoard();
+    }
     createBoard(createBoardDto) {
         return this.boardsService.createBoard(createBoardDto);
     }
@@ -36,6 +39,12 @@ let BoardsController = class BoardsController {
     }
 };
 exports.BoardsController = BoardsController;
+__decorate([
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], BoardsController.prototype, "getAllBoard", null);
 __decorate([
     (0, common_1.Post)(),
     (0, common_1.UsePipes)(common_1.ValidationPipe),
