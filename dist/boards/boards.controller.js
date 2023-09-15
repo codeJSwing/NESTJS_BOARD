@@ -15,7 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BoardsController = void 0;
 const common_1 = require("@nestjs/common");
 const boards_service_1 = require("./boards.service");
+const boards_status_enum_1 = require("./boards.status.enum");
 const create_board_dto_1 = require("./dto/create-board.dto");
+const board_status_validation_pipe_1 = require("./pipes/board-status-validation.pipe");
 let BoardsController = class BoardsController {
     constructor(boardsService) {
         this.boardsService = boardsService;
@@ -28,6 +30,9 @@ let BoardsController = class BoardsController {
     }
     deleteBoard(id) {
         return this.boardsService.deleteBoard(id);
+    }
+    updateBoardStatus(id, status) {
+        return this.boardsService.updateBoardStatus(id, status);
     }
 };
 exports.BoardsController = BoardsController;
@@ -53,6 +58,14 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], BoardsController.prototype, "deleteBoard", null);
+__decorate([
+    (0, common_1.Patch)('/:id/status'),
+    __param(0, (0, common_1.Param)('id', common_1.ParseIntPipe)),
+    __param(1, (0, common_1.Body)('status', board_status_validation_pipe_1.BoardStatusValidationPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, String]),
+    __metadata("design:returntype", void 0)
+], BoardsController.prototype, "updateBoardStatus", null);
 exports.BoardsController = BoardsController = __decorate([
     (0, common_1.Controller)('boards'),
     __metadata("design:paramtypes", [boards_service_1.BoardsService])

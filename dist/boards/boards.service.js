@@ -45,6 +45,12 @@ let BoardsService = class BoardsService {
         }
         console.log('result', result);
     }
+    async updateBoardStatus(id, status) {
+        const board = await this.getBoardById(id);
+        board.status = status;
+        await this.boardRepository.save(board);
+        return board;
+    }
 };
 exports.BoardsService = BoardsService;
 exports.BoardsService = BoardsService = __decorate([
